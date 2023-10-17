@@ -1,6 +1,11 @@
 
 更新日志: (记录每一版的主要改动.)
 
+### [1.20.4] - 2023/10/17
+
+- An English build is now included with the source.
+- Customized the English UI.
+
 ### [1.20.3] - 2022/09/03
 
 - Redesigned English UI.

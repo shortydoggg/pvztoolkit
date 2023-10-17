@@ -1,0 +1,96 @@
+This file describes the formation string format used in PvZ Toolkit/Tools.
+
+
+1. The formation string is in the standard Base64 encoding format, and is also compatible with the Base64URL format.
+
+(The theoretical length of the string is about 18~164.)
+
+2. The decoded binary byte stream needs to be XORed with 0x54 (84) first.
+
+3. The data stream is several bytes of zlib compressed data, followed by 1 byte of RS information.
+
+  +========================+----+
+  | ... zlib stream ... | RS |
+  +========================+----+
+
+(Theoretical length of compressed data is about 12~121 bytes.)
+
+4. The RS information bit is divided into two parts, which respectively represent the position of the rake and the scene map.
+
+  0000 0000
+     R S
+
+R: The position of the rake, if it does not exist, it is represented by 0, if it exists, the value is the number of the row it is in, and the top row is the first row.
+
+S: Scene map, the values 0 1 2 3 4 5 respectively represent day, night, swimming pool, foggy night, roof, and moonlit night.
+
+5. The zlib version used to compress the data is 1.2.12, using the highest level of compression (Z_BEST_COMPRESSION).
+
+After decompression, the plant data on the field is obtained, which consists of several GRID structures with a length of two bytes.
+
+    0 1
+  +---+---+
+  | GRID |
+  +---+---+
+
+When the scene is a swimming pool or a foggy night (S==2 || S==3), the total number of structures is 54, and the rest is 45.
+
+All GRIDs are arranged in writing order from left to right and top to bottom, corresponding to the actual map position.
+
+6. Each GRID structure represents the content of a grid on the field, which is divided into several parts.
+
+  000000 0 0 00 0 0 0 0 0 0
+       P P P B B K K C C L
+         I A I I I
+
+| Bits | Length | Identification | Meaning |
+| ------ | ---- | ---- | ---- |
+| 10~15 | 6 | P | Main plant types |
+| 9 | 1 | PI | Whether the main plant is a copycat |
+| 8 | 1 | PA | Whether the main plant is awake |
+| 6~7 | 2 | B | Whether there are bottom plants or tombstones |
+| 5 | 1 | BI | Is the bottom plant a copycat |
+| 4 | 1 | K | Is there a pumpkin shell |
+| 3 | 1 | KI | Is the pumpkin shell a copycat |
+| 2 | 1 | C | Presence of coffee beans |
+| 1 | 1 | CI | Is the coffee bean a copycat |
+| 0 | 1 | L | Is there a ladder |
+
+P: 0 means that there is no plant, and a value of 1~48 means that there are plants coded 0~47.
+PI: Indicates whether the plant is an imitator or not when P is active, 0 normal 1 imitator.
+PA: When P is valid, it means whether the plant is awake or not, 0 is asleep and 1 is awake.
+
+B: 0 means there is no bottom plant, 1 water lily 2 flowerpot. 3 means there is a tombstone.
+BI: When there is a water lily or a flower pot at the bottom, it is used to indicate whether it is an imitator, 0 normal 1 imitator.
+
+K: 0 means no pumpkin shells present, 1 means present.
+KI: Used to indicate if a pumpkin shell is an imitator when present, 0 normal 1 imitator.
+
+C: 0 means no coffee beans present, 1 means present.
+CI: used to indicate whether it is an imitator when coffee beans are present, 0 common 1 imitator.
+
+L: 0 means there is no ladder, 1 means there is.
+
+7. Other details.
+
+The rake position is not greater than 5 in the five-element field, not greater than 6 in the six-element field and is not located on the waterway.
+
+Recommended order for placement/planting: Rake Water Lily/Flower Pot Main Plant Pumpkin Shell Coffee Bean Tombstone Ladder.
+
+P should not be water lilies/flower pots/pumpkin shells/coffee beans and values greater than 48.
+
+PA is used in daytime scenes (S==0 || S==2 || S==4) to determine whether mushroom plants need to wake up.
+
+8. References:
+
+https://tools.ietf.org/html/rfc4648
+https://www.ietf.org/rfc/rfc1950.txt
+
+https://pvz.lmintlcx.com/toolkit/
+https://pvz.lmintlcx.com/tools/
+
+=========
+
+Version: 1.0.3
+Author: lmintlcx
+Date: 2022/08/11

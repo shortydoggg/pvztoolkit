@@ -2372,7 +2372,7 @@ void Window::cb_tooltips()
     check_bug_spray->copy_tooltip(on ? "Unlimited Bug Spray" : nullptr);
     check_tree_food->copy_tooltip(on ? "Unlimited Tree Food" : nullptr);
     check_chocolate->copy_tooltip(on ? "Unlimited Chocolate" : nullptr);
-    input_wisdom_tree->copy_tooltip("0 ~ 1000");
+    input_wisdom_tree->copy_tooltip("0 ~ 2,147,483,647");
     button_wisdom_tree->copy_tooltip(on ? "Feet Tall" : nullptr);
     check_free_planting->copy_tooltip(on ? "Free Planting" : nullptr);
     check_placed_anywhere->copy_tooltip(on ? "Placed Anywhere" : nullptr);
@@ -2567,7 +2567,10 @@ void Window::cb_about()
                        + "\n"                                                     //
                        + "复刻起源：" + "\t" + "PVZ Helper 1.8.7" + "\n"          //
                        + "依赖项目：" + "\t" + "FLTK 1.4 + zlib 1.2.12" + "\n"    //
-                       + "鸣谢名单：" + "\t" + "kmtohoem 63enjoy 273.15K" + "\n"; //
+                       + "鸣谢名单：" + "\t" + "kmtohoem 63enjoy 273.15K" + "\n" //
+					   +"\n"												  //
+					   + "修改者:" + "\t" + "     shorty#3746" + "\n" //
+					   + "源代码:" + "\t" + "     https://github.com/shortydoggg/pvztoolkit" + "\n"; //
 
     fl_message_title("关于 PvZ Toolkit");
     fl_message(text.c_str());

@@ -1,2 +1,7 @@
 out/
+out_(English)/
 tmp/
+eng/out/
+eng/tmp/
+dist/
+eng/dist/
