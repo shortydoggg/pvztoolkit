@@ -11,11 +11,6 @@ Update log: (records major changes in each version.)
 - An English build is now included with the source.
 - Customized the English UI.
 
-### [1.20.4] - 2023/10/17
-
-- An English build is now included with the source.
-- Customized the English UI.
-
 ### [1.20.3] - 2022/09/03
 
 - Redesigned English UI.
