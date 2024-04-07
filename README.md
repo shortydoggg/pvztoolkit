@@ -4,23 +4,17 @@ PvZ Toolkit is an auxiliary tool for the PC version of Plants vs. Zombies.
 
 ## Preview animation
 
-### Simplified Chinese
-
-![PvZ Toolkit](https://github.com/shortydoggg/pvztoolkit/raw/master/img/pvztoolkit_zh.gif)
-
-> For non-Chinese users, English tooltips will be displayed with mouse hovers.
-
 ### English
 
 ![PvZ Toolkit](https://github.com/shortydoggg/pvztoolkit/raw/master/img/pvztoolkit_en.gif)
 
-## download link
+## Original download link
 
 PvZ Toolkit official website: [https://pvz.lmintlcx.com/toolkit/](https://pvz.lmintlcx.com/toolkit/)
 
 ## Update log
 
-Latest version: 1.20.4 (2023-10-17)
+Latest version: 1.20.5 (2024-04-07)
 
 [Click to view CHANGELOG.md](https://github.com/shortydoggg/pvztoolkit/blob/master/CHANGELOG.md)
 
@@ -74,40 +68,6 @@ PvZ Toolkit is developed with Visual Studio and depends on FLTK interface librar
 > Dependencies FLTK 1.4 and zlib 1.2.12 required to build the complete project are already included in the code repository.
 
 
-### For the Chinese version:
-
-The following operations are performed in the command prompt, and the finished file `pvztoolkit.exe` is located in the pvztoolkit directory inside the `out` folder.
-
-```bat
-REM clone project
-
-git clone https://github.com/shortydoggg/pvztoolkit.git
-
-REM switch to the project folder
-
-cd pvztoolkit
-
-REM starts the Visual Studio 2019 compilation environment
-
-call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" x86
-
-REM adds paths to dependent libraries to environment variables
-
-set INCLUDE=.\fltk\include;%INCLUDE%
-set LIB=.\fltk\lib;%LIB%
-
-set INCLUDE=.\zlib\include;%INCLUDE%
-set LIB=.\zlib\lib;%LIB%
-
-REM build project
-
-nmake -f makefile.release
-
-REM embed manifest file
-
-mt.exe -nologo -manifest ".\res\ptk.manifest" -outputresource:".\out\pvztoolkit.exe;#1"
-```
-
 ### For the English version:
 
 The following operations are performed in the command prompt, and the finished file `pvztoolkit_(English).exe` is located in the `pvztoolkit` directory inside the `eng\out` folder.
@@ -115,12 +75,11 @@ The following operations are performed in the command prompt, and the finished f
 ```bat
 REM clone project
 
-git clone https://github.com/shortydoggg/pvztoolkit.git
+git clone https://github.com/shortydoggg/pvztoolkit.git pvztoolkit
 
 REM switch to the project folder
 
 cd pvztoolkit
-cd eng
 
 REM starts the Visual Studio 2019 compilation environment
 

@@ -1,7 +1,10 @@
-out/
-out_(English)/
-tmp/
-eng/out/
-eng/tmp/
-dist/
-eng/dist/
+.\out\*
+.\out\
+*.exe
+*.obj
+version.res
+.\out\version.res
+.\out\*.obj
+.\out\*.exe
+.\dist\*
+.\dist\
