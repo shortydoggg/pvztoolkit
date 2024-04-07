@@ -75,7 +75,7 @@ The following operations are performed in the command prompt, and the finished f
 ```bat
 REM clone project
 
-git clone https://github.com/shortydoggg/pvztoolkit.git
+git clone --branch develop https://github.com/shortydoggg/pvztoolkit.git
 
 REM switch to the project folder
 
