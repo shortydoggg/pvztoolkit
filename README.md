@@ -75,12 +75,11 @@ The following operations are performed in the command prompt, and the finished f
 ```bat
 REM clone project
 
-git clone --branch develop https://github.com/shortydoggg/pvztoolkit.git
+git clone https://github.com/shortydoggg/pvztoolkit.git pvztoolkit
 
 REM switch to the project folder
 
 cd pvztoolkit
-cd eng
 
 REM starts the Visual Studio 2019 compilation environment
 
