@@ -4,7 +4,7 @@ Update log: (records major changes in each version.)
 ### [1.20.5] - 2024/04/07
 - Removed the Chinese build.
 - Removed upx.
-- Translated up Chinese comments in code.
+- Translated the Chinese comments in the code to English.
 
 ### [1.20.4] - 2023/10/17
 
