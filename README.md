@@ -1,4 +1,4 @@
-**[简体中文](./README_Chinese_Simplified.md) | English**
+**[简体中文](./README.Chinese_Simplified.md) | English**
 
 # PvZ Toolkit
 
