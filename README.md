@@ -1,4 +1,4 @@
-**[简体中文](./README.Chinese_Simplified.md) | English**
+**English | [简体中文](./README.Chinese_Simplified.md)**
 
 # PvZ Toolkit
 
@@ -66,13 +66,23 @@ PvZ Toolkit is developed using Visual C++ and FLTK library with zlib.
 
 ```bat
 
+REM Get the project source code
+
 git clone https://github.com/shortydoggg/pvztoolkit
+
+REM Switch to the project folder
 
 cd pvztoolkit
 
+REM Create and switch to a temporary folder
+
 mkdir build && cd build
 
+REM Start the compilation environment (please modify the compiler installation directory according to the actual situation)
+
 call "C:\VisualStudio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86
+
+REM Configure the project (please modify the build type and dependent library path according to the actual situation)
 
 cmake ^
 -G "NMake Makefiles" ^
@@ -80,9 +90,17 @@ cmake ^
 -D FLTK_DIR="C:\Dev\fltk_1.4.0\msvc2017_x86\static\CMake" ^
 -S ..
 
+REM Compile the project
+
 cmake --build .
 
+REM The finished file pvztoolkit.exe is located in the build folder
+
 ```
+
+Conditional compilation switches:
+`_PVZ_BETA_LEAK_SUPPORT` supports leaked beta versions
+`_PTK_CHINESE_UI` Chinese language interface
 
 ## Roadmap
 
