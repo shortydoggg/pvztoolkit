@@ -20,6 +20,7 @@ x86
 
 set INCLUDE=%FLTK%\include;%INCLUDE%
 set LIB=%FLTK%\lib;%LIB%
+
 rem goto :release
 if exist .\build\pvztoolkitd.exe del .\build\pvztoolkitd.exe
 
@@ -46,22 +47,38 @@ signtool.exe sign /v ^
 
 goto :end 
 
+
 rem :release
+rem --FOR POST WINDOWS XP--
+
 
 nmake -f tools/release.makefile clean
 nmake -f tools/release.makefile
+
+
+rem --END OF POST WINDOWS XP BLOCK--
+
+
+rem --FOR WINDOWS XP--
+
 
 REM nmake -f tools/release.nt5.makefile clean
 REM nmake -f tools/release.nt5.makefile
 REM start powershell Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 REM start powershell .\nt5\patch_exe.ps1 .\build\pvztoolkit.exe
+REM if not exist .\build\pvztoolkit.exe goto :end
+REM goto :next
+
+
+rem --END OF WINDOWS XP BLOCK--
 
 if not exist .\build\pvztoolkit.exe goto :end
-rem goto :end
+
 mt.exe -nologo ^
 -manifest ".\res\pvztoolkit.manifest" ^
 -outputresource:".\build\pvztoolkit.exe;#1"
 
+:next
 signtool.exe sign /v ^
 /fd sha256 ^
 /f "OTHERS\pvztoolkit.pfx" ^
