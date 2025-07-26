@@ -3304,7 +3304,10 @@ void Window::cb_about()
                        + "原始作者：" + "\t" + origin_author + "\n"     //
                        + "\n"                                           //
                        + "开发依赖：" + "\t" + dependencies + "\n"      //
-                       + "鸣谢名单：" + "\t" + acknowledgements + "\n"; //
+                       + "鸣谢名单：" + "\t" + acknowledgements + "\n" //
+					   + "\n"                                          //
+					   + "修改者:" + "\t" + "    shorty#3746" + "\n" //
+   					   + "源代码:" + "\t" + "    https://github.com/shortydoggg/pvztoolkit" + "\n"; //
 #else
     std::string text = std::string()                                        //
                        + "PvZ Toolkit" + "\n"                               //
@@ -3320,7 +3323,10 @@ void Window::cb_about()
                        + "Author:       " + "\t" + origin_author + "\n"     //
                        + "\n"                                               //
                        + "Dependencies: " + "\t" + dependencies + "\n"      //
-                       + "Credits:      " + "\t" + acknowledgements + "\n"; //
+                       + "Credits:      " + "\t" + acknowledgements + "\n"  //
+					   + "\n"                                               //
+					   + "Built by:" + "\t" + "shorty#3746" + "\n" //
+   					   + "Source code:" + "\t" + "https://github.com/shortydoggg/pvztoolkit" + "\n"; //
 #endif
 
 #ifdef _PTK_CHINESE_UI
