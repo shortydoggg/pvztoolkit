@@ -220,23 +220,24 @@ int main(int argc, char **argv)
 #endif
 
     // 防篡改检测
-    // This feature is designed for the original author lmintlcx.
+    // This feature is designed specifcally for shorty#3746.
     // If you want to make a customized version, delete this code.
 #ifdef _PTK_SIGNATURE_CHECK
     wchar_t exePath[MAX_PATH] = {0};
     GetModuleFileNameW(NULL, exePath, MAX_PATH);
-    if (!Pt::VerifySignature(exePath, "\x21\x13\x67\x0f\x3b\x6c\x60\xaf\x42\x50\x7f\x07\xd3\x97\xbc\xd6"))
+    if (!Pt::VerifySignature(exePath, "\x14\x8c\xf4\x9d\xbe\x8a\x5a\x81\x4f\x43\x54\xb5\xc5\xb1\xbc\xb7"))
     {
 #ifdef _PTK_CHINESE_UI
         fl_message_title("PvZ Toolkit 防篡改检测");
-        if (fl_choice("本程序可能已经感染病毒，请在官方渠道重新下载！", //
+        if (fl_choice("此程序已被他人篡改，可能感染病毒。请直接从shorty重新下载。", //
 #else
         fl_message_title("PvZ Toolkit Tamper-proof Detection");
-        if (fl_choice("This program may have been infected with a virus, \n"
-                      "please download it again from the official website!", //
+        if (fl_choice("This program has been altered by someone else, \n"
+					  "and may or may not be infected with a virus. \n"
+                      "Please download directly from shorty this time.", //
 #endif
                       "No", "Yes", 0) == 1)
-            ShellExecuteW(nullptr, L"open", L"https://pvz.lmintlcx.com/toolkit/", //
+            ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
                           nullptr, nullptr, SW_SHOWNORMAL);
         return -1;
     }

@@ -22,6 +22,7 @@ set INCLUDE=%FLTK%\include;%INCLUDE%
 set LIB=%FLTK%\lib;%LIB%
 
 rem goto :release
+
 if exist .\build\pvztoolkitd.exe del .\build\pvztoolkitd.exe
 
 if exist %JOM% (
@@ -47,8 +48,8 @@ signtool.exe sign /v ^
 
 goto :end 
 
+:release
 
-rem :release
 rem --FOR POST WINDOWS XP--
 
 
@@ -136,3 +137,4 @@ set WinRAR="C:\Program Files\WinRAR\WinRAR.exe"
 %WinRAR% a -afrar -m5 -ma4 -r -rr1 -s %pvz%.rar "pvztoolkit\*"
 %WinRAR% a -afzip -m5      -r         %pvz%.zip "pvztoolkit\*"
 rmdir /s/q pvztoolkit\
+exit /b

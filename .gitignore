@@ -1,10 +1,11 @@
 build/
-.exe
-.rar
-.zip
-.asc
+*.exe
+*.rar
+*.zip
+*.asc
 OTHERS/
 build_fltk_zlib.bat
+deps/*.bat
 pvztoolkit.pfx
 OTHERS/pvztoolkit.pfx
 OTHERS/*.pfx
@@ -12,3 +13,7 @@ OTHERS/*.pfx
 fltk_win10/
 fltk_xp/
 fltk/
+/*.bat
+configure
+
+
