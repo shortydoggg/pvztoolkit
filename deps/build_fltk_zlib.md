@@ -39,12 +39,6 @@ cmake ^
 
 nmake && nmake install
 
-copy /y %SRC_DIR%\build\src\CMakeFiles\fltk.dir\fltk.pdb %INS_DIR%\lib
-copy /y %SRC_DIR%\build\src\CMakeFiles\fltk_images.dir\fltk_images.pdb %INS_DIR%\lib
-copy /y %SRC_DIR%\build\jpeg\CMakeFiles\fltk_jpeg.dir\fltk_jpeg.pdb %INS_DIR%\lib
-copy /y %SRC_DIR%\build\png\CMakeFiles\fltk_png.dir\fltk_png.pdb %INS_DIR%\lib
-copy /y %SRC_DIR%\build\zlib\CMakeFiles\fltk_z.dir\fltk_z.pdb %INS_DIR%\lib
-
 ```
 
 ```txt
