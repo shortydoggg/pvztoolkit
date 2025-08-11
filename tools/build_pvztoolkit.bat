@@ -40,7 +40,7 @@ mt.exe -nologo ^
 -outputresource:".\build\pvztoolkitd.exe;#1"
 
 signtool.exe sign /v ^
-/fd sha1 ^
+/fd sha256 ^
 /f "OTHERS\pvztoolkit.pfx" ^
 /p "9N8YsP78wr5Q" ^
 /t http://timestamp.digicert.com ^
@@ -81,14 +81,14 @@ mt.exe -nologo ^
 
 :next
 signtool.exe sign /v ^
-/fd sha1 ^
+/fd sha256 ^
 /f "OTHERS\pvztoolkit.pfx" ^
 /p "9N8YsP78wr5Q" ^
 /t http://timestamp.digicert.com ^
 .\build\pvztoolkit.exe
 
 REM signtool.exe sign /v ^
-REM /as /fd sha256 ^
+REM /fd sha1 ^
 REM /f "OTHERS\pvztoolkit.pfx" ^
 REM /p "9N8YsP78wr5Q" ^
 REM /t http://timestamp.digicert.com ^
@@ -139,3 +139,4 @@ set WinRAR="C:\Program Files\WinRAR\WinRAR.exe"
 rmdir /s/q pvztoolkit\
 
 exit /b
+
