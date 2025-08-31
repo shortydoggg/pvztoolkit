@@ -18,7 +18,7 @@ GitHub Releases: [https://github.com/shortydoggg/pvztoolkit/releases](https://gi
 
 ## 更新日志
 
-最新版本: 1.22.0 (2024-06-22)
+最新版本: 1.22.1 (2025-08-31)
 
 [点击查看 CHANGELOG_ZH.md](https://github.com/shortydoggg/pvztoolkit/blob/master/CHANGELOG_ZH.md)
 

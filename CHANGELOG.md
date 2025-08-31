@@ -1,6 +1,9 @@
 Update log: (Records the major changes in each version.)
 
-## [1.22.0] - 2024/06/22
+## [1.22.1] - 2025/08/31
+- Fixed display scaling bug.
+
+### [1.22.0] - 2024/06/22
 
 - Improved English UI.
 - Compatible with Windows 2000 / XP.
