@@ -23,6 +23,7 @@
 
 #include "../inc/toolkit.h"
 #include "../inc/utils.h"
+#include "../inc/version.h"
 
 #define IDI_ICON 1001
 
@@ -219,25 +220,52 @@ int main(int argc, char **argv)
     }
 #endif
 
-    // 防篡改检测
-    // This feature is designed for the original author lmintlcx.
+// 测试版在 2025-12-31 23:59:59 之后失效
+    if (!RELEASE_VERSION && (std::time(nullptr) > std::time_t(1767225599)))
+    {
+		#ifdef _PTK_CHINESE_UI 
+			fl_message_title("测试版过期提示");
+			if (fl_choice("这是很久以前的测试版哦，现在去下载新的正式版吗？", //
+                      "No", "Yes", 0) == 1)
+			ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
+                          nullptr, nullptr, SW_SHOWNORMAL);
+			return -1;
+		#else
+		fl_message_title("Beta Version Expiration Notice");
+        if (fl_choice("This is an old beta version. Shall we download the new official version now?", //
+                      "No", "Yes", 0) == 1)
+            ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
+                          nullptr, nullptr, SW_SHOWNORMAL);
+        return -1;
+		#endif
+
+    }
+	
+    // 防篡改检测 Anti-tampering Detection
+    // This feature is designed specifcally for shorty#3746.
     // If you want to make a customized version, delete this code.
 #ifdef _PTK_SIGNATURE_CHECK
     wchar_t exePath[MAX_PATH] = {0};
     GetModuleFileNameW(NULL, exePath, MAX_PATH);
-    if (!Pt::VerifySignature(exePath, "\x21\x13\x67\x0f\x3b\x6c\x60\xaf\x42\x50\x7f\x07\xd3\x97\xbc\xd6"))
+    if (!Pt::VerifySignature(exePath, "\x14\x8c\xf4\x9d\xbe\x8a\x5a\x81\x4f\x43\x54\xb5\xc5\xb1\xbc\xb7"))
     {
 #ifdef _PTK_CHINESE_UI
         fl_message_title("PvZ Toolkit 防篡改检测");
-        if (fl_choice("本程序可能已经感染病毒，请在官方渠道重新下载！", //
+        if (fl_choice("这个程序已被他人修改过, \n"
+						"可能感染病毒，也可能未感染。 \n"
+						"这次您想直接从 shorty 下载吗？", //
+						"No", "Yes", 0) == 1)
+            ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
+                          nullptr, nullptr, SW_SHOWNORMAL);
 #else
         fl_message_title("PvZ Toolkit Tamper-proof Detection");
-        if (fl_choice("This program may have been infected with a virus, \n"
-                      "please download it again from the official website!", //
-#endif
-                      "No", "Yes", 0) == 1)
-            ShellExecuteW(nullptr, L"open", L"https://pvz.lmintlcx.com/toolkit/", //
+        if (fl_choice("This program has been altered by someone else, \n"
+					  "and may or may not be infected with a virus. \n"
+                      "Would you like to download directly from shorty this time?", //
+					                        "No", "Yes", 0) == 1)
+            ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
                           nullptr, nullptr, SW_SHOWNORMAL);
+#endif
         return -1;
     }
 #endif
@@ -289,3 +317,4 @@ int main(int argc, char **argv)
 
     return ret;
 }
+

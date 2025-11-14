@@ -16,8 +16,8 @@ DEFINES = -DNDEBUG -D_HAS_EXCEPTIONS=0 \
           -DWIN32 -D_WIN32_WINNT=0x0600 \
           -D_REGEX_MAX_STACK_COUNT=0 \
           -D_PVZ_BETA_LEAK_SUPPORT \
-          -D_PTK_CHINESE_UI \
-          -D_PTK_SIGNATURE_CHECK
+          -D_PTK_SIGNATURE_CHECK \
+		  -D_PTK_CHINESE_UI
 INCPATH = -I.
 INCS = .\inc\utils.h \
        .\inc\pak.h \

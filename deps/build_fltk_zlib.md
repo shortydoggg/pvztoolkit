@@ -1,14 +1,15 @@
 
 ```bat
 
-call "C:\VisualStudio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86
+call "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ^
+x86
 
-set SRC_DIR=C:\Dev\fltk_1.4.0\fltk-1.4.x-20240531-04949f13
-set INS_DIR=C:\Dev\fltk_1.4.0\msvc2017_x86\static
+set SRC_DIR=%CD%\..\..\fltk-1.4.x-20240531-04949f13
+set INS_DIR=%CD%\..\..\fltk
 
 cd /d %SRC_DIR%
 
-rem git apply pvztoolkit_fltk.diff
+git apply %SRC_DIR%\..\pvztoolkit_v1.22.1\deps\pvztoolkit_fltk.diff
 
 mkdir build && cd build
 
@@ -41,6 +42,8 @@ nmake && nmake install
 ```
 
 ```txt
+
+rem debug version
 
 -D CMAKE_BUILD_TYPE=Debug ^
 -D FLTK_OPTION_OPTIM="/GL-" ^
