@@ -56,6 +56,15 @@ PvZ Toolkit supports all known official versions of Plants vs. Zombies 1 on PC (
 - 1.1.0.1056 GOTY 2012 (zh) (2012/06/05)
 - 1.1.0.1056 GOTY 2012 (zh) (2012/07/17)
 
+## Size Scaling
+
+- Zoom in: Hold ***Ctrl*** and ***+*** buttons
+- Shrink: Hold ***Ctrl*** and ***-*** buttons
+- Reduction: Press ***Esc*** button
+- 100% Size: Hold ***Ctrl*** and ***0*** buttons
+
+Supported Scaling Ratios: 50%, 67%, 80%, 90%, 100%, 125%, 150%, 200%, 250%, 300%, 400%, 500%
+
 ## Build
 
 PvZ Toolkit is developed using Visual C++ and FLTK library with zlib.
@@ -138,3 +147,4 @@ PvZ Toolkit is licensed under version 3 of the GNU General Public License.
 PvZ Toolkit was originally based on [zhumxiang/PVZ_Helper](https://github.com/zhumxiang/PVZ_Helper).
 
 Got a lot of help from [Lazuplis-Mei](https://github.com/Lazuplis-Mei) / [63enjoy](https://github.com/63enjoy) / [infdust](https://github.com/infdust).
+
