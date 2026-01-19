@@ -1,15 +1,14 @@
 
 ```bat
 
-REM -- Get the original FLTK that was used --
+REM -- Get the FLTK 1.4.4 --
 if exist pvztoolkit\ rmdir /s/q pvztoolkit
 mkdir pvztoolkit
 cd pvztoolkit
 set folder=%CD%
-if exist fltk-1.4.x-20240531-04949f13\ rmdir /s/q fltk-1.4.x-20240531-04949f13
-git clone https://github.com/shortydoggg/fltk.git fltk-1.4.x-20240531-04949f13\
-cd fltk-1.4.x-20240531-04949f13\
-git checkout 04949f13498b5406dfe54d793fc88736ec052f5b
+if exist fltk-1.4.4\ rmdir /s/q fltk-1.4.4
+git clone --branch release-1.4.4 https://github.com/shortydoggg/fltk.git fltk-1.4.4\
+cd fltk-1.4.4
 rmdir /s/q .git
  
 cd %folder%\

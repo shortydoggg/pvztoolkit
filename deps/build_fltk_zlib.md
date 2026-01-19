@@ -4,7 +4,7 @@
 call "%ProgramFiles(x86)%\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" ^
 x86
 
-set SRC_DIR=%CD%\..\..\fltk-1.4.x-20240531-04949f13
+set SRC_DIR=%CD%\..\..\fltk-1.4.4
 set INS_DIR=%CD%\..\..\fltk
 
 cd /d %SRC_DIR%
