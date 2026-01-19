@@ -220,8 +220,8 @@ int main(int argc, char **argv)
     }
 #endif
 
-// 测试版在 2025-12-31 23:59:59 之后失效
-    if (!RELEASE_VERSION && (std::time(nullptr) > std::time_t(1767225599)))
+// 测试版在 2026-03-31 23:59:59 之后失效
+    if (!RELEASE_VERSION && (std::time(nullptr) > std::time_t(1775001599)))
     {
 		#ifdef _PTK_CHINESE_UI 
 			fl_message_title("测试版过期提示");
