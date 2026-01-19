@@ -9,7 +9,7 @@ set INS_DIR=%CD%\..\..\fltk
 
 cd /d %SRC_DIR%
 
-git apply %SRC_DIR%\..\pvztoolkit_v1.22.1\deps\pvztoolkit_fltk.diff
+git apply %SRC_DIR%\..\pvztoolkit_v1.22.2\deps\pvztoolkit_fltk.diff
 
 mkdir build && cd build
 
