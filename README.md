@@ -16,7 +16,7 @@ GitHub Releases: [https://github.com/shortydoggg/pvztoolkit/releases](https://gi
 
 ## Change Log
 
-Latest Version: 1.22.1 (2025-11-14)
+Latest Version: 1.22.2 (2026-01-19)
 
 [CHANGELOG.md](https://github.com/shortydoggg/pvztoolkit/blob/master/CHANGELOG.md)
 
