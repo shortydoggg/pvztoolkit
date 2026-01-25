@@ -12,7 +12,7 @@ index e5a0276..a22c627 100644
      else {
        fl_draw_shortcut = 2; // hack value to make '&' disappear
 diff --git a/src/Fl_Screen_Driver.cxx b/src/Fl_Screen_Driver.cxx
-index 05461a2..641301f 100644
+index 05461a2..57a925d 100644
 --- a/src/Fl_Screen_Driver.cxx
 +++ b/src/Fl_Screen_Driver.cxx
 @@ -478,37 +478,10 @@ int Fl_Screen_Driver::scale_handler(int event)
@@ -64,7 +64,7 @@ index 05461a2..641301f 100644
 -      0.5f, 2.f/3, 0.8f, 0.9f, 1.0f,
 -      1.1f, 1.2f, 4.f/3, 1.5f, 1.7f,
 -      2.0f, 2.4f, 3.0f};
-+            0.5f, 2.f/3, 0.8f, 0.9f, 1.00f, 1.25f, 1.50f, 2.00f, 2.50f, 3.00f, 4.00f, 5.00f
++                  0.5f, 2.f/3, 0.8f, 0.9f, 1.00f, 1.25f, 1.50f, 2.00f, 2.50f, 3.00f, 4.00f, 5.00f
 +    };
  #endif
      float f, old_f = screen_dr->scale(screen)/initial_scale;
