@@ -6,7 +6,7 @@
 
 ## 界面截图
 
-![PvZ Toolkit](https://github.com/shortydoggg/pvztoolkit/raw/master/docs/pvztoolkit_zh.gif)
+![PvZ Toolkit](https://github.com/shortydoggg/pvztoolkit/raw/develop/docs/pvztoolkit_zh.gif)
 
 > For non-Chinese users, English tooltips will be displayed with mouse hovers.
 
@@ -20,7 +20,7 @@ GitHub Releases: [https://github.com/shortydoggg/pvztoolkit/releases](https://gi
 
 最新版本: 1.22.2 (2026-01-24)
 
-[点击查看 CHANGELOG_ZH.md](https://github.com/shortydoggg/pvztoolkit/blob/master/CHANGELOG_ZH.md)
+[点击查看 CHANGELOG_ZH.md](https://github.com/shortydoggg/pvztoolkit/blob/develop/CHANGELOG_ZH.md)
 
 ## 运行平台
 
@@ -98,7 +98,7 @@ PvZ Toolkit 使用 Visual C++ 开发, 依赖于 FLTK 界面库和 zlib 压缩库
 
 > 需求的语言标准 >= C++17, Visual Studio >= 2017 15.9, CMake >= 3.15.
 
-> 依赖库 FLTK + zlib 编译步骤参考: [build_fltk_zlib.md](https://github.com/shortydoggg/pvztoolkit/blob/master/deps/build_fltk_zlib.md)
+> 依赖库 FLTK + zlib 编译步骤参考: [build_fltk_zlib.md](https://github.com/shortydoggg/pvztoolkit/blob/develop/deps/build_fltk_zlib.md)
 
 ```bat
 
@@ -169,7 +169,7 @@ REM 成品文件 pvztoolkit.exe 位于 build 文件夹内
 - 同时支持显示主界面的 简体中文 和冒泡框的 English 两种语言.
 - 更加全面的存档位置查找方法, 能够打开所有可能存在的存档文件夹.
 
-> 阵型代码编码格式开发者文档: [rfc1437_ZH.txt](https://github.com/shortydoggg/pvztoolkit/blob/master/docs/rfc1437_ZH.txt)
+> 阵型代码编码格式开发者文档: [rfc1437_ZH.txt](https://github.com/shortydoggg/pvztoolkit/blob/develop/docs/rfc1437_ZH.txt)
 
 ## 已知问题
 

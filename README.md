@@ -6,7 +6,7 @@ Plants vs. Zombies Tool Kit
 
 ## Screenshots
 
-![PvZ Toolkit](https://github.com/shortydoggg/pvztoolkit/raw/master/docs/pvztoolkit_en.gif)
+![PvZ Toolkit](https://github.com/shortydoggg/pvztoolkit/raw/develop/docs/pvztoolkit_en.gif)
 
 ## Download Link
 
@@ -18,7 +18,7 @@ GitHub Releases: [https://github.com/shortydoggg/pvztoolkit/releases](https://gi
 
 Latest Version: 1.22.2 (2026-01-24)
 
-[CHANGELOG.md](https://github.com/shortydoggg/pvztoolkit/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/shortydoggg/pvztoolkit/blob/develop/CHANGELOG.md)
 
 ## Supported Platforms
 
@@ -71,7 +71,7 @@ PvZ Toolkit is developed using Visual C++ and FLTK library with zlib.
 
 > Requirements: >= C++17, Visual Studio >= 2017 15.9, CMake >= 3.15.
 
-> Compile FLTK + zlib libraries: [build_fltk_zlib.md](https://github.com/shortydoggg/pvztoolkit/blob/master/deps/build_fltk_zlib.md)
+> Compile FLTK + zlib libraries: [build_fltk_zlib.md](https://github.com/shortydoggg/pvztoolkit/blob/develop/deps/build_fltk_zlib.md)
 
 ```bat
 
@@ -131,7 +131,7 @@ Goals for new PvZ Toolkit:
 
 ~~TODO: I DON'T KNOW HOW TO FUCKING TRANSLATE THEM PROPERLY !!!~~
 
-> Lineup Code Developer Documentation: [rfc1437.txt](https://github.com/shortydoggg/pvztoolkit/blob/master/docs/rfc1437.txt)
+> Lineup Code Developer Documentation: [rfc1437.txt](https://github.com/shortydoggg/pvztoolkit/blob/develop/docs/rfc1437.txt)
 
 ## Known Issues
 
