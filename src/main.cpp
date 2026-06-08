@@ -220,6 +220,27 @@ int main(int argc, char **argv)
     }
 #endif
 
+// 测试版在 2026-09-30 23:59:59 之后失效
+    if (!RELEASE_VERSION && (std::time(nullptr) > std::time_t(1790812799)))
+    {
+		#ifdef _PTK_CHINESE_UI 
+			fl_message_title("测试版过期提示");
+			if (fl_choice("这是很久以前的测试版哦，现在去下载新的正式版吗？", //
+                      "No", "Yes", 0) == 1)
+			ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
+                          nullptr, nullptr, SW_SHOWNORMAL);
+			return -1;
+		#else
+		fl_message_title("Beta Version Expiration Notice");
+        if (fl_choice("This is an old beta version. Shall we download the new official version now?", //
+                      "No", "Yes", 0) == 1)
+            ShellExecuteW(nullptr, L"open", L"https://github.com/shortydoggg/pvztoolkit/releases/", //
+                          nullptr, nullptr, SW_SHOWNORMAL);
+        return -1;
+		#endif
+
+    }
+	
     // 防篡改检测 Anti-tampering Detection
     // This feature is designed specifcally for shorty#3746.
     // If you want to make a customized version, delete this code.

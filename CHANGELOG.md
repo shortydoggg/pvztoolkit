@@ -1,6 +1,8 @@
 Update log: (Records the major changes in each version.)
+## [1.22.2] - 2026/06/08
+- Updated for fltk 1.4.4
 
-## [1.22.1] - 2025/11/14
+## [1.22.1] - 2025/11/09
 - Fixed display scaling bug.
 
 ### [1.22.0] - 2024/06/22
